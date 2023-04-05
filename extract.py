@@ -1,13 +1,17 @@
 import glob
+import re
+
+regex = r'"([^"]*)"'
 
 for filename in glob.glob('**/*.uc', recursive=True):
     with open(filename, "r") as input_file:
         with open(f"{filename}.md", "w") as output_file:
-            output_file.write("|Line|String|\n|-|-|\n")
+            output_file.write("|Line|Sentence|String|\n|-|-|-|\n")
             line_number = 1
             for line in input_file:
-                line = line.replace('\t','')
+                line = line.replace('\t','').replace('\n','')
                 if line.startswith('say("') or line.count('= "') > 0 or line.count('item.say("'):
-                    output_file.write(f"[{line_number}]|{line}")
+                    matches = re.findall(regex, line)
+                    output_file.write(f"[{line_number}]|{line}|{matches[0]}\n")
                 line_number += 1
     print(f"{line_number} lineas en {filename}")
