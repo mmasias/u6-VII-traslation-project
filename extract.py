@@ -1,7 +1,7 @@
 import glob
 import re
 
-regex = r'"([^"]*)"'
+pattern = r'"(?:[^"]|(?:"[^"]*"))*"'
 
 for filename in glob.glob('**/*.uc', recursive=True):
     with open(filename, "r") as input_file:
@@ -11,7 +11,8 @@ for filename in glob.glob('**/*.uc', recursive=True):
             for line in input_file:
                 line = line.replace('\t','').replace('\n','')
                 if line.startswith('say("') or line.count('= "') > 0 or line.count('item.say("'):
-                    matches = re.findall(regex, line)
-                    output_file.write(f"[{line_number}]|{line}|{matches[0]}\n")
+
+                    result = re.search(pattern, line)
+                    output_file.write(f"[{line_number}]|{line}|{result.group()}\n")
                 line_number += 1
     print(f"{line_number} lineas en {filename}")
