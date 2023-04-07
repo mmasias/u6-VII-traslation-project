@@ -1,7 +1,7 @@
 import glob
 import re
 import openai
-openai.api_key = 
+openai.api_key = ""
 
 pattern = r'"(?:[^"]|(?:"[^"]*"))*"'
 
@@ -24,12 +24,9 @@ for filename in glob.glob('**/*.uc', recursive=True):
                         max_tokens=1024,
                         n=1,
                         stop=None,
-                        )
-                        
+                        )                        
                     traduccion = response.choices[0].text.strip()
-#                    traduccion = "Traduce al español: "+result.group()
-
                     output_file.write(f"[{line_number}]|{line}|{result.group()}|{traduccion}\n")
-                    print(".")
+                    print(".", end='')
                 line_number += 1
     print(f"\n{line_number} lineas en {filename}\n")
