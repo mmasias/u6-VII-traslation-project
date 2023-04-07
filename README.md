@@ -1,6 +1,6 @@
 # u6-VII-traslation-project
 
-Micro proyecto para hacer tres cosas:
+## Micro proyecto para hacer tres cosas:
 
 1. Codificar con Python (que no lo había tocado hasta ahora)
 1. Jugar con el API de openAI y ver que tal traduce
