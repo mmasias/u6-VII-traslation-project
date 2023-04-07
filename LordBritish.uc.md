@@ -1,13 +1,11 @@
 |Line|Sentence|String|Spanish
 |-|-|-|-|
-[41]|//pronoun = "  ";|"  "|"No tengo nada que decir."
-[42]|//title = "madame";|"madame"|Madame, señora.
-[46]|//pronoun = " ";|" "|"Nuestro amor es eterno"
-
-"Nuestro amor es eterno"
+[41]|//pronoun = "  ";|"  "|"  "
+[42]|//title = "madame";|"madame"|"señora"
+[46]|//pronoun = " ";|" "|" "
 [47]|//title = " ";|" "|"Aquellos que no aprenden de la historia están condenados a repetirla."
-[52]|greeting = "friends"; |"friends"|Amigos
-[54]|greeting = "friend"; //Avatar is solo|"friend"|amigo
+[52]|greeting = "friends"; |"friends"|"amigos"
+[54]|greeting = "friend"; //Avatar is solo|"friend"|"amigo"
 [60]|av_1st_greet = "@My liege..@";|"@My liege..@"|@Mi señor...@
 [61]|npc_1st_greet = "@Avatar, thou art here!@";|"@Avatar, thou art here!@"|@Avatar, estás aquí!@
 [63]|av_2nd_greet  = "@My liege..@";|"@My liege..@"|Mi señor...
